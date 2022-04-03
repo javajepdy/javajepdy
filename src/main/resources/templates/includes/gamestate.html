@@ -1,0 +1,37 @@
+<div>public game id = <a href="/{game.shortCode}">{game.shortCode}</a></div>
+<div><div>game status</div><div>{game.status}</div></div>
+<div><div>game name</div><div>{game.name}</div></div>
+<div><div>rounds</div><div>{game.rounds.size}</div></div>
+<ul>
+    {#for team in game.teams.orEmpty}
+    <li>
+        team {team.name}
+    </li>
+    {/for}
+</ul>
+<ul>
+    {#for round in game.rounds.orEmpty}
+    <li>
+        {round.categories.size()}
+    </li>
+    {/for}
+</ul>
+
+<div class="container-fluid">
+    {#for cat in game.rounds.get(game.currentRound).categories}
+    <div class="row align-items-center">
+        <div class="col-4 display-4">{cat.title}</div>
+        {#for e in cat.getSortedEntries()}
+        <div class="col-2 display-1">{e.value}</div>
+        {/for}
+    </div>
+    {/for}
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="row align-items-center">
+        {#for team in game.teams}
+        <div class="col display-5">{team.name} {team.score.points}</div>
+        {/for}
+    </div>
+</div>

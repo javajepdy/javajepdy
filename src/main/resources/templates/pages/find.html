@@ -1,0 +1,31 @@
+{#include outline}
+
+    <div class="col-lg-5 text-center text-lg-start">
+        <div class="display-4 fw-bold lh-1 mb-3">Find a game</div>
+        <table class="table" style="color: gold;">
+         <thead>
+         <tr>
+             <th>Game added</th>
+             <th>Name</th>
+             <th>State</th>
+             <th>Short Code</th>
+         </tr>
+         </thead>
+            <tbody>
+            {#for g in games.getGamesByDateReversed()}
+            <tr>
+                <td>{g.created}</td>
+                <td>{g.name}</td>
+                <td>{g.status}</td>
+                <td><a class="btn btn-info" href="/{g.shortCode}">{g.shortCode}</a>
+                    {#if host}
+                        <a href="/ui/host?uuid={g.uuid()}" class="btn btn-warning">host</a>
+                    {/if}
+                </td>
+            </tr>
+            {/for}
+            </tbody>
+        </table>
+    </div>
+
+{/include}

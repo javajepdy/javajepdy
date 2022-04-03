@@ -1,0 +1,15 @@
+{#include outline}
+
+<div class="row align-items-center py-5">
+    <div class="col-lg-5 text-center text-lg-start">
+        <div class="display-4 fw-bold lh-1 mb-3">{game.currentCell}</div>
+    </div>
+</div>
+
+<div hx-sse="connect:/ui/update?game={game.shortCode}">
+    <div hx-trigger="sse:{game.shortCode}" hx-get="/ui/viewstate?game={game.shortCode}">
+        {#include viewstate}{/include}
+    </div>
+</div>
+
+{/include}

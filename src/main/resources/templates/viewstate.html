@@ -1,0 +1,52 @@
+<div>
+{#switch game.status}
+{#case ready}
+<h1>Waiting to start</h1>
+
+<h2>Categories</h2>
+
+<table>
+<tbody>
+    {#for catsum in game.categorySummary()}
+    <tr><td>{catsum}</td></tr>
+    {/for}
+</tbody>
+</table>
+
+{#case started}
+<h3>In Play : Round {game.currentRound}</h3>
+
+<div class="container-fluid">
+    {#for row in game.rounds.get(game.currentRound).rows}
+    <div class="row align-items-center">
+        <div class="col-4 display-4">{row.category}</div>
+        {#for cell in row.cells}
+            {#if cell.used}
+            <div class="col-2 display-1"></div>
+            {#else}
+            <div class="col-2 display-1">{cell.value}</div>
+            {/if}
+        {/for}
+    </div>
+    {/for}
+</div>
+<hr>
+
+{#case showClue}
+{#include includes/show_clue}{/include}
+
+{#case showAnswer}
+{#include includes/show_answer}{/include}
+
+{#case finished}
+<h3>Game finished</h3>
+
+    <h1>The winner is {game.leader()}</h1>
+    <h2>{game.leaderPoints()}</h2>
+
+{/switch}
+    <hr>
+    {#include includes/team_scores}{/include}
+
+    <h4>{game.name}</h4>
+</div>

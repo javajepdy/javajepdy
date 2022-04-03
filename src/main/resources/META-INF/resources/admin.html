@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<h1>Admin</h1>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add New Event
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/api/event/add" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Event Name</label>
+                        <input type="text" name="name" class="form-control" id="name" aria-describedby="namehelp">
+                        <div id="namehelp" class="form-text">Name of the event</div>
+                    </div>
+                    <input type="hidden" id="categories" name="gategories" value="5">
+                    <input type="hidden" id="seed" name="seed" value="5">
+                    <select class="form-select" name="rounds" aria-label="Number of Rounds">
+                        <option selected>Number of Rounds</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <div class="mb-3">
+                        <label for="team1" class="form-label">Team 1</label>
+                        <input type="text" class="form-control" name="team1" id="team1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="team2" class="form-label">Team 2 </label>
+                        <input type="text" class="form-control" id="team2" name="team2">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="team3" class="form-label">Team 3 </label>
+                        <input type="text" class="form-control" id="team3" name="team3">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="team4" class="form-label">Team 4 </label>
+                        <input type="text" class="form-control" id="team4" name="team4">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

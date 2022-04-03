@@ -1,0 +1,59 @@
+{#include outline}
+
+
+<div id="modals-here"></div>
+
+<div class="col-lg-7 text-center text-lg-start">
+    <div class="display-5 fw-bold lh-1 mb-3">Game {game.name}</div>
+    <div>Player link: <a href="/{game.shortCode}" target="_blank">{game.shortCode}</a></div>
+
+    <div id="grid">
+    {#include includes/host_grid}{/include}
+        </div>
+</div>
+<hr>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-warning"
+                    hx-post="/api/event/startgame?uuid={uuid}"
+                    hx-trigger="click"
+                    hx-target="#status"
+                    hx-swap="innerHTML">Start Game
+            </button>
+        </div>
+
+        <div class="col"><a class=" btn btn-primary">Update Game</a></div>
+        <div class="col">
+            <button class=" btn btn-primary"
+                    hx-post="/ui/nextRound?uuid={uuid}"
+                    hx-trigger="click"
+                    hx-target="#grid"
+                    hx-swap="innerHTML"
+            >Next Round</button>
+        </div>
+        <div class="col">
+        <button class=" btn btn-primary"
+                hx-post="/ui/previousRound?uuid={uuid}"
+                hx-trigger="click"
+                hx-target="#grid"
+                hx-swap="innerHTML"
+        >Previous Round</button>
+        </div>
+        <div class="col">
+            <button class=" btn btn-danger"
+                    hx-post="/api/event/endgame?uuid={uuid}"
+                    hx-trigger="click"
+                    hx-target="#status"
+                    hx-swap="innerHTML">End Game
+            </button>
+        </div>
+        <div class="col">
+            <a href="find" class="btn btn-lg btn-warning" >Find a game</a>
+        </div>
+    </div>
+</div>
+</div>
+{/include}

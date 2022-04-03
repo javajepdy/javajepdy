@@ -1,0 +1,87 @@
+ body {
+  background-image: url("/img/jepdy_background.png");
+  color: gold;
+ }
+
+
+@font-face {
+font-family: "GyParody";
+src: url("/fonts/gyparody.ttf");
+}
+ .sun {
+  margin: 100px;
+  width: 1px;
+  height: 1px;
+  background-color: gold;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 50px 70px gold;
+}
+
+.sunspot {
+
+    color:black;
+    position: relative;
+      top: -2rem;
+      left: -2rem;
+}
+
+.btn .round {
+    border: none;
+    background: gold;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    border-radius: 50%;
+
+}
+
+.headline {
+
+	color: gold;
+	font-family: 'proxima-nova', sans-serif;
+	font-size: 4rem;
+	text-align: center;
+	font-weight: 300;
+	margin: 0;
+}
+
+
+.host {
+
+	color: gold;
+	font-family: 'proxima-nova', sans-serif;
+	font-size: 2rem;
+	text-align: center;
+	font-weight: 300;
+	margin: 0;
+}
+
+.tagline {
+
+	color: gold;
+	font-family: 'proxima-nova', sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	font-weight: 300;
+	margin: 0;
+}
+
+
+.splash {
+
+	color: gold;
+	font-family: 'GyParody';
+	font-size: 8rem;
+	text-align: center;
+	font-weight: 300;
+	margin: 0;
+}
+
+.hostview {
+color: black;
+}

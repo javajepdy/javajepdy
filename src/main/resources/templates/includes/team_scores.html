@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        {#for team in game.teams}
+        <div class="col">
+            <div class="btn btn-danger {audience ?: 'headline'}">
+                 {team.name} : {team.score.points}
+            </div>
+        </div>
+        {/for}
+
+
+    </div>
+</div>

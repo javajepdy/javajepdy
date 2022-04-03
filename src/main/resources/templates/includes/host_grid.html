@@ -1,0 +1,35 @@
+<h2 id="status">{game.status}</h2>
+<div class="container-fluid">
+    <h3>Round {game.currentRound} </h3>
+
+    {#for row in game.rounds.get(game.currentRound).rows}
+
+    <div class="row align-items-center">
+        <div class="col-4"><h4>{row.category}</h4></div>
+        {#for cell in row.cells }
+        <div class="col">
+
+            {#if cell.used}
+            <button class="btn btn-danger" hx-post="/ui/clue_modal?uuid={uuid}&round={game.currentRound}&row={row_count}&cell={cell_count}"
+                    hx-target="#modals-here"
+                    hx-trigger="click">
+                <del><h3>{cell.value}</h3></del>
+            </button>
+            {#else}
+            <button class="btn btn-primary" hx-post="/ui/clue_modal?uuid={uuid}&round={game.currentRound}&row={row_count}&cell={cell_count}"
+                    hx-target="#modals-here"
+                    hx-trigger="click">
+                <h3>{cell.value}</h3>
+            </button>
+            {/if}
+
+        </div>
+        {/for}
+    </div>
+    {/for}
+</div>
+<div>
+    <hr>
+<h3>Scores</h3>
+{#include /includes/team_scores audience="host"}{/include}
+</div>
