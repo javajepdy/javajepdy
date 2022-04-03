@@ -26,9 +26,24 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
+
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-api</artifactId>
+          <version>2.1</version>
+        </dependency>
+
+
+
     </dependencies>
   </dependencyManagement>
   <dependencies>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.1</version>
+    </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-jackson</artifactId>
@@ -73,6 +88,13 @@
       <artifactId>commons-csv</artifactId>
       <version>1.9.0</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.jboss.logmanager</groupId>
+      <artifactId>log4j2-jboss-logmanager</artifactId>
+    </dependency>
+
+
   </dependencies>
   <build>
     <plugins>

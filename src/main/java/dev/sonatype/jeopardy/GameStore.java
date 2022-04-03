@@ -10,12 +10,12 @@ import io.quarkus.mongodb.panache.PanacheMongoRepository;
 import io.quarkus.panache.common.Sort;
 import org.bson.types.ObjectId;
 import org.hashids.Hashids;
-import org.jboss.logging.Logger;
-
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.*;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Singleton
 public class GameStore implements PanacheMongoRepository<Game> {
@@ -23,7 +23,7 @@ public class GameStore implements PanacheMongoRepository<Game> {
     @Inject
     UpdateService publisher;
 
-    private static final Logger log = Logger.getLogger(GameStore.class);
+    private static final Logger log = LogManager.getLogger(GameStore.class);
 
     private final Hashids hashids = new Hashids("this is my salt");
 
@@ -37,6 +37,7 @@ public class GameStore implements PanacheMongoRepository<Game> {
 
     public synchronized String addEvent(Game e) {
 
+        log.info("adding game name={}",e.name);
         String hash = hashids.encode(Integer.MAX_VALUE- (count()+1) );
         e.shortCode=hash;
 
@@ -46,7 +47,7 @@ public class GameStore implements PanacheMongoRepository<Game> {
     }
 
     public Game getPublicEvent(String shortKey) {
-        log.infof("get public event %s",shortKey);
+        log.info("get public event {}",shortKey);
         Game g=null;
         try {
              g = find("shortCode", shortKey).firstResult();
@@ -54,7 +55,7 @@ public class GameStore implements PanacheMongoRepository<Game> {
             ;
         }
 
-        if(g==null) log.infof("not found");
+        if(g==null) log.info("not found");
         return g;
     }
     public Game getHostEvent(String uuid) {
@@ -150,7 +151,7 @@ public class GameStore implements PanacheMongoRepository<Game> {
         Game g=getHostEvent(uuid);
         int max=g.rounds.size();
         int next=g.currentRound+1;
-        log.infof("next round requested %s %d -> %d / %d",uuid,g.currentRound,next,max);
+        log.info("next round requested {} {} -> {} / {}",uuid,g.currentRound,next,max);
         if(next<max) {
             g.currentRound=next;
             persistOrUpdate(g);
@@ -166,7 +167,7 @@ public class GameStore implements PanacheMongoRepository<Game> {
         Game g=getHostEvent(uuid);
         int next=g.currentRound-1;
 
-        log.infof("previous round requested %s %d -> %d",uuid,g.currentRound,next);
+        log.info("previous round requested {} {} -> {}",uuid,g.currentRound,next);
         if(next>=0) {
             g.currentRound=next;
             persistOrUpdate(g);
