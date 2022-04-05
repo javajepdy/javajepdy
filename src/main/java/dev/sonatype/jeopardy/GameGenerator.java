@@ -14,6 +14,7 @@ import java.util.*;
 
 public class GameGenerator {
 
+
     @ConfigProperty(name = "javajepdy.categories")
     private static int categoriesPerRound=5;
 

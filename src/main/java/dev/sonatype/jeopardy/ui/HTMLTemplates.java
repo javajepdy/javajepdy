@@ -40,4 +40,14 @@ public class HTMLTemplates {
     @Location("includes/host_grid.html")
     Template host_grid;
 
+
+    @Location("pages/new_team.html")
+    Template new_team;
+
+
+    @Location("includes/team_added.html")
+    Template team_added;
+
+    @Location("includes/team_form.html")
+    Template team_form;
 }

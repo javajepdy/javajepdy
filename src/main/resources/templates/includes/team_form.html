@@ -1,0 +1,39 @@
+
+<form class="p-4 p-md-5 border rounded-3 bg-light"  hx-encoding="multipart/form-data" style="color:black;" hx-post="/ui/team/add" hx-target="this" hx-swap="outerHTML">
+
+
+    <div class="form-floating mb-3">
+        <input type="text" name="name" class="form-control" id="name" placeholder="Team Name"
+               {#if f.name } value="{f.name}" {/if}
+        >
+        <label for="name">Team Name</label>
+        {#if e.containsKey("name") }
+        <div>
+            {e.get("name")}
+        </div>
+        {/if}
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" name="description" class="form-control" id="description" placeholder="Team Description"
+               {#if f.description } value="{f.description}" {/if}
+        >
+        <label for="description">Team Description</label>
+        {#if e.containsKey("description") }
+        <div>
+            {e.get("description")}
+        </div>
+        {/if}
+    </div>
+
+
+    <div class="form-floating mb-3">
+        <input type="file" name="image" class="form-control" id="file" placeholder="image "
+        >
+        <label for="file">Image Name</label>
+    </div>
+
+
+    <button class="btn btn-warning">Submit</button>
+
+</form>

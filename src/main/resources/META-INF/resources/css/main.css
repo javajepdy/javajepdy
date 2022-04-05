@@ -14,11 +14,14 @@ src: url("/fonts/gyparody.ttf");
   height: 1px;
   background-color: gold;
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 0 50px 70px gold;
+  box-shadow: 0 0 70px 70px gold;
 }
 
+.rounded-circle {
+ background: gold;
+ color: black;
+ margin: 50px;
+}
 .sunspot {
 
     color:black;
@@ -44,7 +47,7 @@ src: url("/fonts/gyparody.ttf");
 
 	color: gold;
 	font-family: 'proxima-nova', sans-serif;
-	font-size: 4rem;
+	font-size: 5rem;
 	text-align: center;
 	font-weight: 300;
 	margin: 0;

@@ -2,10 +2,7 @@ package dev.sonatype.jeopardy.ui;
 
 import dev.sonatype.jeopardy.ClueStore;
 import dev.sonatype.jeopardy.GameStore;
-import dev.sonatype.jeopardy.model.Cell;
-import dev.sonatype.jeopardy.model.Game;
-import dev.sonatype.jeopardy.model.Round;
-import dev.sonatype.jeopardy.model.Row;
+import dev.sonatype.jeopardy.model.*;
 import io.quarkus.qute.TemplateInstance;
 
 import javax.inject.Inject;
@@ -14,6 +11,8 @@ import javax.ws.rs.core.MediaType;
 
 import io.quarkus.qute.Template;
 import org.jboss.logging.Logger;
+
+import java.util.HashMap;
 
 
 @Path("/ui")
@@ -195,6 +194,12 @@ public class UIService {
     }
 
 
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("addteam")
+        public TemplateInstance addTeam() {
+            return t.new_team.data("e",new HashMap(),"f",new NewTeamForm());
+        }
 
 
 

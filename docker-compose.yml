@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  mongo.dev:
+    image: mongo:5.0.6
+    ports:
+      - 27017:27017
+  mongoexpress.dev:
+    image: mongo-express:latest
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo.dev
+    ports:
+      - 8081:8081
+    links:
+      - mongo.dev
+  postgres.dev:
+    image: postgres:14.1
+    environment:
+      - POSTGRES_USER=hibernate
+      - POSTGRES_PASSWORD=hibernate
+      - POSTGRES_DB=hibernate_db
+    ports:
+      - 5432:5432
