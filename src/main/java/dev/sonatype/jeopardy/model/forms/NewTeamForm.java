@@ -1,5 +1,6 @@
-package dev.sonatype.jeopardy.model;
+package dev.sonatype.jeopardy.model.forms;
 
+import dev.sonatype.jeopardy.model.MyTeam;
 import org.jboss.resteasy.annotations.providers.multipart.PartType;
 
 import javax.ws.rs.FormParam;

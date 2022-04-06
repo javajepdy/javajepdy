@@ -15,8 +15,17 @@ services:
   postgres.dev:
     image: postgres:14.1
     environment:
-      - POSTGRES_USER=hibernate
-      - POSTGRES_PASSWORD=hibernate
-      - POSTGRES_DB=hibernate_db
+      - POSTGRES_USER=javajepdy
+      - POSTGRES_PASSWORD=javajepdy
+      - POSTGRES_DB=javajepdy
     ports:
       - 5432:5432
+  keycloak.dev:
+    image: quay.io/keycloak/keycloak:17.0.1
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - KC_HOSTNAME=localhost:8180
+    ports:
+      - 8180:8180
+    command: start-dev

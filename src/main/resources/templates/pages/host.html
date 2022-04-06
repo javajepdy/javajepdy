@@ -28,7 +28,7 @@
         <div class="col"><a class=" btn btn-primary">Update Game</a></div>
         <div class="col">
             <button class=" btn btn-primary"
-                    hx-post="/ui/nextRound?uuid={uuid}"
+                    hx-post="/ui/game/nextRound?uuid={uuid}"
                     hx-trigger="click"
                     hx-target="#grid"
                     hx-swap="innerHTML"
@@ -36,7 +36,7 @@
         </div>
         <div class="col">
         <button class=" btn btn-primary"
-                hx-post="/ui/previousRound?uuid={uuid}"
+                hx-post="/ui/game/previousRound?uuid={uuid}"
                 hx-trigger="click"
                 hx-target="#grid"
                 hx-swap="innerHTML"

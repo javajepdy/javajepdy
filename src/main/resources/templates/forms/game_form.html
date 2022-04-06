@@ -1,7 +1,9 @@
-<form class="p-4 p-md-5 border rounded-3 bg-light"  style="color:black;" action="/api/event/add" method="POST" >
+<form class="p-4 p-md-5 border rounded-3 bg-light"   hx-encoding="multipart/form-data"  style="color:black;" hx-post="/ui/game/add" hx-target="this" hx-swap="outerHTML">
 
     <div class="form-floating mb-3">
-        <input type="text" name="name" class="form-control" id="name" placeholder="Name of Game">
+        <input type="text" name="name" class="form-control" id="name" placeholder="Name of Game"
+               {#if f.name } value="{f.name}" {/if}
+        >
         <label for="name">Game Name</label>
     </div>
     <div class="form-floating mb-3">
@@ -41,6 +43,9 @@
         <label for="team4">Name of Team 4</label>
     </div>
 
+    <div>
+        {#if e.containsKey("general") } {e.get("general")} {/if}
+    </div>
     <div class="checkbox mb-3">
     </div>
     <button class="w-30 btn btn-lg btn-primary" type="submit">Register</button>

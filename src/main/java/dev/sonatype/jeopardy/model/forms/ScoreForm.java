@@ -1,4 +1,4 @@
-package dev.sonatype.jeopardy.model;
+package dev.sonatype.jeopardy.model.forms;
 
 
 import javax.ws.rs.FormParam;

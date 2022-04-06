@@ -1,25 +1,20 @@
-{#include outline}
-
-
-
 <div>
     <div class="container">
         <div class="row align-items-center">
             <div class="offset-3 col-md-6">
                 <div class="display-4 fw-bold lh-1 mb-3">New game registered</div>
-                <div>public game id = {game.shortCode}</div>
+                <div>public game id = {g.shortCode}</div>
                 <ul>
-                    {#for team in game.teams.orEmpty}
+                    {#for team in g.teams.orEmpty}
                     <li>
                         team {team.name}
                     </li>
                     {/for}
                 </ul>
 
-                <a href="/ui/host?uuid={uuid}" class="btn btn-lg btn-primary" >Host</a>
+                <a href="/ui/game/host?uuid={uuid}" class="btn btn-lg btn-primary" >Host</a>
 
             </div>
         </div>
     </div>
 </div>
-    {/include}

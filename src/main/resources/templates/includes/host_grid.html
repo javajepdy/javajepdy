@@ -10,13 +10,13 @@
         <div class="col">
 
             {#if cell.used}
-            <button class="btn btn-danger" hx-post="/ui/clue_modal?uuid={uuid}&round={game.currentRound}&row={row_count}&cell={cell_count}"
+            <button class="btn btn-danger" hx-post="/ui/game/clue_modal?uuid={uuid}&round={game.currentRound}&row={row_count}&cell={cell_count}"
                     hx-target="#modals-here"
                     hx-trigger="click">
                 <del><h3>{cell.value}</h3></del>
             </button>
             {#else}
-            <button class="btn btn-primary" hx-post="/ui/clue_modal?uuid={uuid}&round={game.currentRound}&row={row_count}&cell={cell_count}"
+            <button class="btn btn-primary" hx-post="/ui/game/clue_modal?uuid={uuid}&round={game.currentRound}&row={row_count}&cell={cell_count}"
                     hx-target="#modals-here"
                     hx-trigger="click">
                 <h3>{cell.value}</h3>

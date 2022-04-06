@@ -17,7 +17,7 @@ public class FrontPage {
     @GET
     @Produces(MediaType.TEXT_HTML)
     public Response index() {
-        return Response.temporaryRedirect(URI.create("/ui/main")).build();
+        return Response.temporaryRedirect(URI.create("/ui/game/main")).build();
     }
 
     @GET

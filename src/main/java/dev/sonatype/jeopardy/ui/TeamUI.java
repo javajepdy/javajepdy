@@ -1,15 +1,11 @@
 package dev.sonatype.jeopardy.ui;
 
-import dev.sonatype.jeopardy.GameStore;
 import dev.sonatype.jeopardy.TeamStore;
 import dev.sonatype.jeopardy.model.MyTeam;
-import dev.sonatype.jeopardy.model.NewEventForm;
-import dev.sonatype.jeopardy.model.NewTeamForm;
-import io.quarkus.qute.Template;
+import dev.sonatype.jeopardy.model.forms.NewTeamForm;
 import io.quarkus.qute.TemplateInstance;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jboss.resteasy.annotations.Form;
 import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -17,17 +13,15 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 @ApplicationScoped
 
 @Path("/ui/team")
-public class TeamService {
+public class TeamUI {
 
-    private static final Logger log = LogManager.getLogger(TeamService.class);
+    private static final Logger log = LogManager.getLogger(TeamUI.class);
 
     @Inject
     HTMLTemplates t;
@@ -35,30 +29,16 @@ public class TeamService {
     @Inject
     TeamStore store;
 
-    @GET
-    @Path("count")
-    @Transactional
-    public long count() {
-        MyTeam mt=new MyTeam();
-        mt.name= ""+new Date();
-        mt.picture="hello".getBytes();
-        store.persist(mt);
-        return store.count();
-    }
+
 
     @GET
-    @Path("all")
-
-    public List<MyTeam> all() {
-
-        return store.listAll();
+    @Produces(MediaType.TEXT_HTML)
+    @Path("addteam")
+    public TemplateInstance addTeam() {
+        return t.new_team.data("e",new HashMap(),"f",new NewTeamForm());
     }
-    @GET
-    @Path("icon")
-    @Produces(MediaType.APPLICATION_OCTET_STREAM)
-    public byte[] icon(@QueryParam("id") long id) {
-        return store.findById(id).picture;
-    }
+
+
 
 
     @POST

@@ -1,6 +1,7 @@
 package dev.sonatype.jeopardy;
 
 import dev.sonatype.jeopardy.model.*;
+import dev.sonatype.jeopardy.model.forms.NewGameForm;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
@@ -35,7 +36,7 @@ public class GameGenerator {
      * Generate event from provided form.
      * @param f
      */
-    public Game generate(NewEventForm f) {
+    public Game generate(NewGameForm f) {
 
         // a game is built up of random categories and random questions guided by value
         // each category should provide 5 clues. Categories with less that 5 are ignored

@@ -1,8 +1,10 @@
 package dev.sonatype.jeopardy.ui;
 
 import dev.sonatype.jeopardy.ClueStore;
+import dev.sonatype.jeopardy.GameGenerator;
 import dev.sonatype.jeopardy.GameStore;
 import dev.sonatype.jeopardy.model.*;
+import dev.sonatype.jeopardy.model.forms.NewGameForm;
 import io.quarkus.qute.TemplateInstance;
 
 import javax.inject.Inject;
@@ -11,14 +13,21 @@ import javax.ws.rs.core.MediaType;
 
 import io.quarkus.qute.Template;
 import org.jboss.logging.Logger;
+import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
-@Path("/ui")
-public class UIService {
+@Path("/ui/game")
+public class GameUI {
 
-    private static final Logger log = Logger.getLogger(UIService.class);
+    private static final Logger log = Logger.getLogger(GameUI.class);
+
+
+    @Inject
+    GameGenerator generator;
+
 
     @Inject
     HTMLTemplates t;
@@ -76,13 +85,6 @@ public class UIService {
     }
 
 
-    @GET
-    @Path("new")
-    @Produces(MediaType.TEXT_HTML)
-    public TemplateInstance newGame() {
-        log.info("index requested");
-        return t.newgame.data(this);
-    }
 
 
     @GET
@@ -194,15 +196,32 @@ public class UIService {
     }
 
 
+
+
     @GET
+    @Path("new")
     @Produces(MediaType.TEXT_HTML)
-    @Path("addteam")
-        public TemplateInstance addTeam() {
-            return t.new_team.data("e",new HashMap(),"f",new NewTeamForm());
+    public TemplateInstance newGame() {
+        return t.newgame.data("e",new HashMap(),"f",new NewGameForm());
+    }
+
+
+    @POST
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Path("add")
+    @Produces(MediaType.TEXT_HTML)
+
+    public TemplateInstance add(@MultipartForm NewGameForm f) {
+
+
+        Map<String, String> errors = f.isValid();
+        if (errors.isEmpty()) {
+
+            Game g = generator.generate(f);
+            store.persist(g);
+            return t.added.data("g", g,"uuid",g.uuid());
+        } else {
+            return t.game_form.data("f", f, "e", errors);
         }
-
-
-
-
-
+    }
 }

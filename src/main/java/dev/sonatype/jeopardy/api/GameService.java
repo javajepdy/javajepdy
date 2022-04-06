@@ -3,6 +3,7 @@ package dev.sonatype.jeopardy.api;
 import dev.sonatype.jeopardy.GameGenerator;
 import dev.sonatype.jeopardy.GameStore;
 import dev.sonatype.jeopardy.model.*;
+import dev.sonatype.jeopardy.model.forms.ScoreForm;
 import org.jboss.logging.Logger;
 import org.jboss.resteasy.annotations.Form;
 
@@ -22,6 +23,7 @@ import java.util.Collection;
 public class GameService {
 
     private static final Logger log = Logger.getLogger(GameService.class);
+
 
 
     @Inject
@@ -64,16 +66,11 @@ public class GameService {
     }
 
 
-
-    @POST
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Path("add")
-    @Produces(MediaType.TEXT_HTML)
-
+/*
     public Response add(@Form NewEventForm f) {
 
 
-        String err=f.check();
+        Map<String,String> err=f.isValid();
         log.infof("add event requested (check=%s)",err);
         if(err!=null) return Response.serverError().build();
 
@@ -89,7 +86,7 @@ public class GameService {
         return Response.temporaryRedirect(URI.create("/ui/added?uuid="+uuid)).build();
 
     }
-
+*/
 
     @GET
     @Path("/list")
@@ -158,7 +155,7 @@ public class GameService {
         Cell c=w.cells.get(f.cell-1);
         store.score(g,c,f.winner-1,f.loser-1);
 
-        return Response.temporaryRedirect(URI.create("/ui/host?uuid="+f.uuid)).build();
+        return Response.temporaryRedirect(URI.create("/ui/game/host?uuid="+f.uuid)).build();
     }
 
 

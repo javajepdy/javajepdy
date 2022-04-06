@@ -13,7 +13,7 @@ public class HTMLTemplates {
     @Location("pages/main.html")
     Template main;
 
-    @Location("pages/added.html")
+    @Location("includes/game_added.html")
     Template added;
 
     @Location("pages/find.html")
@@ -48,6 +48,9 @@ public class HTMLTemplates {
     @Location("includes/team_added.html")
     Template team_added;
 
-    @Location("includes/team_form.html")
+    @Location("forms/team_form.html")
     Template team_form;
+
+    @Location("forms/game_form.html")
+    Template game_form;
 }
