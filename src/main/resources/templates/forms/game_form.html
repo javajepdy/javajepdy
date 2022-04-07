@@ -23,26 +23,18 @@
         <label for="categories">Categories per Round</label>
     </div>
 
+    {#for i in 4}
     <div class="form-floating mb-3">
-        <input type="text" name="team1" class="form-control" id="team1" placeholder="Name of Team">
-        <label for="team1">Name of Team 1</label>
-    </div>
 
-    <div class="form-floating mb-3">
-        <input type="text" name="team2" class="form-control" id="team2" placeholder="Name of Team">
-        <label for="team2">Name of Team 2</label>
+        <select type="text" name="team{i}"  class="form-select" id="team{i}"  placeholder="Name of Team {i}">
+            <option selected>select team</option>
+            {#for t in teams}
+            <option value="{t.id}">{t.name}</option>
+            {/for}
+        </select>
+        <label for="team{i}">Name of Team {i}</label>
     </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" name="team3" class="form-control" id="team3" placeholder="Name of Team">
-        <label for="team3">Name of Team 3</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="text" name="team4" class="form-control" id="team4" placeholder="Name of Team">
-        <label for="team4">Name of Team 4</label>
-    </div>
-
+    {/for}
     <div>
         {#if e.containsKey("general") } {e.get("general")} {/if}
     </div>

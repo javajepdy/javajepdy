@@ -1,9 +1,10 @@
 <div>
     <div class="container">
         <div class="row align-items-center">
-            <div class="offset-3 col-md-6">
-                <div class="display-4 fw-bold lh-1 mb-3">New game registered</div>
-                <div>public game id = {g.shortCode}</div>
+            <div class="col-md-6">
+                <div class="display-4 fw-bold lh-1 mb-3">Here's the details</div>
+                <div><h3>public game id = {g.shortCode}</h3></div>
+                <h4>Teams</h4>
                 <ul>
                     {#for team in g.teams.orEmpty}
                     <li>
@@ -12,7 +13,9 @@
                     {/for}
                 </ul>
 
-                <a href="/ui/game/host?uuid={uuid}" class="btn btn-lg btn-primary" >Host</a>
+                <a href="/ui/game/host?uuid={uuid}" class="btn btn-lg btn-warning" >Host</a>
+                <a href="/{g.shortCode}" class="btn btn-lg btn-primary" >Watch</a>
+
 
             </div>
         </div>

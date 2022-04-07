@@ -3,7 +3,6 @@ package dev.sonatype.jeopardy.model;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import org.bson.types.ObjectId;
 
-import javax.swing.*;
 import java.util.*;
 
 /**
@@ -19,7 +18,7 @@ public class Game  {
 
     public ObjectId id;
     public String shortCode;
-    public ArrayList<Team> teams;
+    public ArrayList<TeamRef> teams;
     public ArrayList<Round> rounds;
     public GameState status=GameState.ready;
     public Date created= new Date();
@@ -29,28 +28,24 @@ public class Game  {
     public String name;
     public Cell currentCell;
 
-
-    public Game() {
-
-    }
+    public Game () {}
 
     public String uuid() {
         return id.toString();
     }
-      public Game(String name,Set<String> teamNames,int rounds) {
 
-
+      public Game(String name,Set<MyTeam> teams,int rounds) {
 
         this.name=name;
         this.rounds=new ArrayList<>(rounds);
-        this.teams=new ArrayList<>(teamNames.size());
+        this.teams=new ArrayList<>(teams.size());
 
-        for(String t:teamNames) {
-            Team team=new Team(t);
-            teams.add(team);
+        for(MyTeam t:teams) {
+            TeamRef team=new TeamRef(t.name,t.id);
+            this.teams.add(team);
         }
 
-        
+
     }
 
 
@@ -67,8 +62,8 @@ public class Game  {
 
 
     public String leader() {
-        Team winner=null;
-        for(Team t:teams) {
+        TeamRef winner=null;
+        for(TeamRef t:teams) {
             if(winner==null || t.comparePoints(winner)>0) winner=t;
         }
 
@@ -77,8 +72,8 @@ public class Game  {
     }
 
     public int leaderPoints() {
-        Team winner=null;
-        for(Team t:teams) {
+        TeamRef winner=null;
+        for(TeamRef t:teams) {
             if(winner==null || t.comparePoints(winner)>0) winner=t;
         }
 

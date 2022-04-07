@@ -30,6 +30,9 @@ public class HTMLTemplates {
     @Location("pages/host.html")
     Template host;
 
+    @Location("pages/teams.html")
+    Template teams;
+
 
     @Location("includes/gamestate.html")
     Template gamestate;

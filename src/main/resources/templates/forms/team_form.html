@@ -1,8 +1,9 @@
-
-<form class="p-4 p-md-5 border rounded-3 bg-light"  hx-encoding="multipart/form-data" style="color:black;" hx-post="/ui/team/add" hx-target="this" hx-swap="outerHTML">
+<form class="p-4 p-md-5 border rounded-3 bg-light" id="f1" hx-encoding="multipart/form-data" style="color:black;"
+      hx-post="/ui/team/add" hx-target="this" hx-swap="outerHTML" xmlns="http://www.w3.org/1999/html">
 
 
     <div class="form-floating mb-3">
+
         <input type="text" name="name" class="form-control" id="name" placeholder="Team Name"
                {#if f.name } value="{f.name}" {/if}
         >
@@ -15,10 +16,10 @@
     </div>
 
     <div class="form-floating mb-3">
-        <input type="text" name="description" class="form-control" id="description" placeholder="Team Description"
+        <textarea type="text" rows="10" name="description" style="height:100%;" class="form-control" id="description" placeholder="Team Description"
                {#if f.description } value="{f.description}" {/if}
-        >
-        <label for="description">Team Description</label>
+        ></textarea>
+        <label for="description">Team Description (markdown enabled)</label>
         {#if e.containsKey("description") }
         <div>
             {e.get("description")}

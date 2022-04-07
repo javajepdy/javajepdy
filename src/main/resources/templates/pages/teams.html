@@ -1,0 +1,27 @@
+{#include outline}
+
+    <div class="col-lg-5 text-center text-lg-start">
+        <div class="display-4 fw-bold lh-1 mb-3">Teams</div>
+        <table class="table" style="color: gold;">
+            <tbody hx-confirm="Are you sure?" hx-target="closest tr" hx-swap="outerHTML swap:1s">
+            {#for t in teams }
+            <tr>
+                <td><h3>{t.name}</h3>
+                <p>{t.md.raw}</p>
+                </td><td>
+                <img src="/api/team/icon?id={t.id}" width="100" height="100"/>
+                </td>
+                <td>
+                    <button class="btn btn-danger" hx-delete="/api/team/delete?id={t.id}">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+            {/for}
+            </tbody>
+        </table>
+
+        <a href="/ui/team/addteam" class="btn btn-warning">Add Team</a>
+    </div>
+
+{/include}

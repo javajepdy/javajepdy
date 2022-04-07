@@ -24,6 +24,8 @@ public class GameGenerator {
     @Inject
     public ClueStore store;
 
+    @Inject
+    public TeamStore teamstore;
 
 
     public GameGenerator() throws IOException {
@@ -57,7 +59,7 @@ public class GameGenerator {
             log.infof("rounds reduced to %d", f.rounds);
         }
 
-
+        // convert incoming team ids to real teams..
         Game e=new Game(f.name,f.teams,f.rounds);
 
         List<Category> backupCategories=new LinkedList<>();

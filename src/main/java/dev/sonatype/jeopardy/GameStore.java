@@ -4,7 +4,7 @@ import com.mongodb.client.model.Indexes;
 import dev.sonatype.jeopardy.model.Cell;
 import dev.sonatype.jeopardy.model.Game;
 import dev.sonatype.jeopardy.model.GameState;
-import dev.sonatype.jeopardy.model.Team;
+import dev.sonatype.jeopardy.model.TeamRef;
 import dev.sonatype.jeopardy.ui.UpdateService;
 import io.quarkus.mongodb.panache.PanacheMongoRepository;
 import io.quarkus.panache.common.Sort;
@@ -37,9 +37,12 @@ public class GameStore implements PanacheMongoRepository<Game> {
 
     public synchronized String addEvent(Game e) {
 
-        log.info("adding game name={}",e.name);
+
         String hash = hashids.encode(Integer.MAX_VALUE- (count()+1) );
         e.shortCode=hash;
+
+        log.info("adding game {} / {}",e.shortCode,e.name);
+
 
         persist(e);
 
@@ -127,13 +130,13 @@ public class GameStore implements PanacheMongoRepository<Game> {
         c.used=true;
 
         if(winner>=0) {
-            Team w= g.teams.get(winner);
+            TeamRef w= g.teams.get(winner);
             w.score.points+=c.value;
             w.score.correctAnswers++;
         }
 
         if(loser>=0) {
-            Team l= g.teams.get(loser);
+            TeamRef l= g.teams.get(loser);
             l.score.points-=c.value;
             l.score.wrongAnswers++;
         }

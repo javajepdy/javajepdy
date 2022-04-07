@@ -2,15 +2,14 @@ package dev.sonatype.jeopardy.model.forms;
 
 
 import dev.sonatype.jeopardy.GameStore;
+import dev.sonatype.jeopardy.TeamStore;
 import dev.sonatype.jeopardy.model.Game;
+import dev.sonatype.jeopardy.model.MyTeam;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.ws.rs.FormParam;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class NewGameForm {
 
@@ -40,13 +39,14 @@ public class NewGameForm {
     @FormParam("team4")
     public String team4;
 
-    public Set<String> teams;
+    public Set<MyTeam> teams=new HashSet<>();
 
     public String toString() {
         return "name="+name+" rounds="+rounds;
     }
 
-    public Map<String, String> isValid() {
+    public Map<String, String> isValid(TeamStore ts) {
+
         Map<String,String> errors=new HashMap<>();
 
         if(name==null || name.trim().equals("")) {
@@ -60,20 +60,41 @@ public class NewGameForm {
         }
 
         if(rounds<1 || rounds>3) errors.put("rounds","number of rounds must be between 1 and 3");
-        collectTeams();
 
-        if(teams.isEmpty()) errors.put("general","no teams specified");
-        if(teams.size()==1) errors.put("general","more than one unique team required");
+        Set<Long> teamIDs=collectTeams();
+        if(teamIDs.isEmpty()) errors.put("general","no teams specified");
+        if(teamIDs.size()==1) errors.put("general","more than one unique team required");
 
+        for(Long l:teamIDs) {
+
+            MyTeam mt=ts.findById(l);
+            if(mt==null) {
+                errors.put("general","unknown team id "+l);
+            } else {
+                teams.add(mt);
+            }
+        }
         return errors;
     }
 
-    private void collectTeams() {
-        teams=new TreeSet<>();
-        if(team1!=null && team1.trim().equals("")==false) teams.add(team1);
-        if(team2!=null && team2.trim().equals("")==false) teams.add(team2);
-        if(team3!=null && team3.trim().equals("")==false) teams.add(team3);
-        if(team4!=null && team4.trim().equals("")==false) teams.add(team4);
+    private Set<Long> collectTeams() {
+
+        Set<Long> names=new TreeSet<>();
+        addIfValid(names,team1);
+        addIfValid(names,team2);
+        addIfValid(names,team3);
+        addIfValid(names,team4);
+
+        return names;
+    }
+
+    private void addIfValid(Set<Long> names, String s) {
+        try {
+            Long l=Long.parseLong(s);
+            names.add(l);
+        }  catch(Exception nfe) {
+            ; // ignore - not a valid team id
+        }
     }
 
 

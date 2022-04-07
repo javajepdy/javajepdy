@@ -1,18 +1,16 @@
 <div>
 {#switch game.status}
 {#case ready}
-<h1>Waiting to start</h1>
+    <div class="text-center">
+<h1 >Waiting to start</h1>
 
-<h2>Categories</h2>
-
-<table>
-<tbody>
+<h2>Categories in this game</h2>
+<div class="row">
     {#for catsum in game.categorySummary()}
-    <tr><td>{catsum}</td></tr>
+    <div class="col"><button class="btn btn-warning">{catsum}</button></div>
     {/for}
-</tbody>
-</table>
-
+</div>
+    </div>
 {#case started}
 <h3>In Play : Round {game.currentRound}</h3>
 

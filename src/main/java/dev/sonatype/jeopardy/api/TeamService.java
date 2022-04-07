@@ -5,13 +5,14 @@ import dev.sonatype.jeopardy.model.MyTeam;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.Date;
 import java.util.List;
+
+
+@Path("/api/team")
 
 public class TeamService {
 
@@ -39,6 +40,20 @@ public class TeamService {
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public byte[] icon(@QueryParam("id") long id) {
         return store.findById(id).picture;
+    }
+
+
+    @DELETE
+    @Path("delete")
+    @Transactional
+    public Response delete(@QueryParam("id") long id) {
+
+        MyTeam mt= store.findById(id);
+        if(mt==null) return Response.status(Response.Status.NOT_FOUND).build();
+        else {
+            store.delete(mt);
+        }
+        return Response.ok().build();
     }
 
 

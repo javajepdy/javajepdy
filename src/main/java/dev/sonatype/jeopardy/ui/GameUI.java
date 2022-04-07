@@ -3,6 +3,7 @@ package dev.sonatype.jeopardy.ui;
 import dev.sonatype.jeopardy.ClueStore;
 import dev.sonatype.jeopardy.GameGenerator;
 import dev.sonatype.jeopardy.GameStore;
+import dev.sonatype.jeopardy.TeamStore;
 import dev.sonatype.jeopardy.model.*;
 import dev.sonatype.jeopardy.model.forms.NewGameForm;
 import io.quarkus.qute.TemplateInstance;
@@ -53,6 +54,8 @@ public class GameUI {
     GameStore store;
     @Inject
     ClueStore clues;
+    @Inject
+    TeamStore teams;
 
     @GET
     @Path("main")
@@ -202,7 +205,11 @@ public class GameUI {
     @Path("new")
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance newGame() {
-        return t.newgame.data("e",new HashMap(),"f",new NewGameForm());
+
+        return t.newgame
+                .data("e",new HashMap())
+                .data("f",new NewGameForm())
+                .data("teams",teams.listAll());
     }
 
 
@@ -214,14 +221,14 @@ public class GameUI {
     public TemplateInstance add(@MultipartForm NewGameForm f) {
 
 
-        Map<String, String> errors = f.isValid();
+        Map<String, String> errors = f.isValid(teams);
         if (errors.isEmpty()) {
 
             Game g = generator.generate(f);
-            store.persist(g);
+            store.addEvent(g);
             return t.added.data("g", g,"uuid",g.uuid());
         } else {
-            return t.game_form.data("f", f, "e", errors);
+            return t.game_form.data("f", f, "e", errors,"teams",teams.listAll());
         }
     }
 }

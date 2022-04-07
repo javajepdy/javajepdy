@@ -40,6 +40,17 @@ public class TeamUI {
 
 
 
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("list")
+    public TemplateInstance list() {
+
+        return t.teams.data("teams",store.listAll());
+    }
+
+
+
+
 
     @POST
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -48,7 +59,8 @@ public class TeamUI {
     @Transactional
     public TemplateInstance add(@MultipartForm NewTeamForm f) {
 
-        log.info("new team add request [{}] [{}] [{}]",f.name,f.description,f.image.getAbsolutePath());
+
+        log.info("new team add request [{}] [{}]",f.name,f.description);
 
         Map<String, String> errors = f.isValid();
         if (errors.isEmpty()) {

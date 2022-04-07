@@ -25,7 +25,7 @@ public class FrontPage {
     @Produces(MediaType.TEXT_HTML)
     public Response game(@PathParam("id") String id) {
 
-        return Response.temporaryRedirect(URI.create("/ui/view?id="+id)).build();
+        return Response.temporaryRedirect(URI.create("/ui/game/view?id="+id)).build();
     }
 
 
