@@ -1,18 +1,21 @@
 package dev.sonatype.jeopardy.model.forms;
 
-import dev.sonatype.jeopardy.model.MyTeam;
-import org.jboss.resteasy.annotations.providers.multipart.PartType;
+import dev.sonatype.jeopardy.TeamStore;
+import dev.sonatype.jeopardy.model.Team;
 
 import javax.ws.rs.FormParam;
-import javax.ws.rs.core.MediaType;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NewTeamForm {
+public class TeamForm {
+
+
+
+
+
 
     @FormParam("name")
     public String name;
@@ -24,6 +27,9 @@ public class NewTeamForm {
     public File image;
 
 
+    public Long id;
+
+
     public Map<String, String> isValid() {
         Map<String,String> errors=new HashMap<>();
         if(name==null || name.trim().equals("")) errors.put("name","cannot be blank");
@@ -32,10 +38,19 @@ public class NewTeamForm {
         return errors;
     }
 
-    public MyTeam newTeam() {
-        MyTeam t=new MyTeam();
+    public Team newTeam(TeamStore store, Long id) {
+
+        Team t=null;
+        if(id!=null && id>0) {
+            t=store.findById(id);
+        }
+        if(t==null) {
+            t = new Team();
+        }
+
         t.name=name;
         t.description=description;
+
         if(image!=null) {
             try (FileInputStream fis=new FileInputStream(image) ){
                 t.picture=fis.readAllBytes();
@@ -45,6 +60,18 @@ public class NewTeamForm {
         }
 
         return t;
+
+    }
+
+    public static TeamForm newForm(Team t) {
+
+        TeamForm f=new TeamForm();
+
+        f.description=t.description;
+        f.name=t.name;
+        f.id=t.id;
+
+        return f;
 
     }
 }

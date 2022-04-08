@@ -1,14 +1,13 @@
 package dev.sonatype.jeopardy.api;
 
 import dev.sonatype.jeopardy.TeamStore;
-import dev.sonatype.jeopardy.model.MyTeam;
+import dev.sonatype.jeopardy.model.Team;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.Date;
 import java.util.List;
 
 
@@ -29,7 +28,7 @@ public class TeamService {
     @GET
     @Path("all")
 
-    public List<MyTeam> all() {
+    public List<Team> all() {
 
         return store.listAll();
     }
@@ -48,7 +47,7 @@ public class TeamService {
     @Transactional
     public Response delete(@QueryParam("id") long id) {
 
-        MyTeam mt= store.findById(id);
+        Team mt= store.findById(id);
         if(mt==null) return Response.status(Response.Status.NOT_FOUND).build();
         else {
             store.delete(mt);

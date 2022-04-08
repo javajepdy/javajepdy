@@ -1,16 +1,22 @@
 <div>
 {#switch game.status}
 {#case ready}
-    <div class="text-center">
-<h1 >Waiting to start</h1>
 
-<h2>Categories in this game</h2>
-<div class="row">
-    {#for catsum in game.categorySummary()}
-    <div class="col"><button class="btn btn-warning">{catsum}</button></div>
-    {/for}
-</div>
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">{game.name}</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Almost ready. Catagories coming up include...</p>
+            <marquee behavior="scroll" direction="left">
+                <div class="display-5">
+                    {#for catsum in game.categorySummary()}
+                    "{catsum}",
+                    {/for}
+                </div>
+            </marquee>
+
+        </div>
     </div>
+
 {#case started}
 <h3>In Play : Round {game.currentRound}</h3>
 

@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.net.URI;
 
 @Entity
-public class MyTeam  {
+public class Team {
 
     public String name;
 

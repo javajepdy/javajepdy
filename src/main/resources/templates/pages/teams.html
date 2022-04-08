@@ -15,6 +15,9 @@
                     <button class="btn btn-danger" hx-delete="/api/team/delete?id={t.id}">
                         Delete
                     </button>
+                    <a class="btn btn-warning" href="/ui/team/edit/{t.id}">
+                        Edit
+                    </a>
                 </td>
             </tr>
             {/for}

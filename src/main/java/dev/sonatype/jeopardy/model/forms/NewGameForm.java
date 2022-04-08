@@ -1,10 +1,8 @@
 package dev.sonatype.jeopardy.model.forms;
 
 
-import dev.sonatype.jeopardy.GameStore;
 import dev.sonatype.jeopardy.TeamStore;
-import dev.sonatype.jeopardy.model.Game;
-import dev.sonatype.jeopardy.model.MyTeam;
+import dev.sonatype.jeopardy.model.Team;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,7 +37,7 @@ public class NewGameForm {
     @FormParam("team4")
     public String team4;
 
-    public Set<MyTeam> teams=new HashSet<>();
+    public Set<Team> teams=new HashSet<>();
 
     public String toString() {
         return "name="+name+" rounds="+rounds;
@@ -67,7 +65,7 @@ public class NewGameForm {
 
         for(Long l:teamIDs) {
 
-            MyTeam mt=ts.findById(l);
+            Team mt=ts.findById(l);
             if(mt==null) {
                 errors.put("general","unknown team id "+l);
             } else {

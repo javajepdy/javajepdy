@@ -34,13 +34,13 @@ public class Game  {
         return id.toString();
     }
 
-      public Game(String name,Set<MyTeam> teams,int rounds) {
+      public Game(String name, Set<Team> teams, int rounds) {
 
         this.name=name;
         this.rounds=new ArrayList<>(rounds);
         this.teams=new ArrayList<>(teams.size());
 
-        for(MyTeam t:teams) {
+        for(Team t:teams) {
             TeamRef team=new TeamRef(t.name,t.id);
             this.teams.add(team);
         }

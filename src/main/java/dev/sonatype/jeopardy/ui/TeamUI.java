@@ -1,8 +1,8 @@
 package dev.sonatype.jeopardy.ui;
 
 import dev.sonatype.jeopardy.TeamStore;
-import dev.sonatype.jeopardy.model.MyTeam;
-import dev.sonatype.jeopardy.model.forms.NewTeamForm;
+import dev.sonatype.jeopardy.model.Team;
+import dev.sonatype.jeopardy.model.forms.TeamForm;
 import io.quarkus.qute.TemplateInstance;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,6 +12,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +37,11 @@ public class TeamUI {
     @Produces(MediaType.TEXT_HTML)
     @Path("addteam")
     public TemplateInstance addTeam() {
-        return t.new_team.data("e",new HashMap(),"f",new NewTeamForm());
+
+        log.info("add team request for teams");
+
+        return t.new_team.data("e",new HashMap(),"f",new TeamForm());
+
     }
 
 
@@ -45,10 +51,28 @@ public class TeamUI {
     @Path("list")
     public TemplateInstance list() {
 
+        log.info("list request for teams");
         return t.teams.data("teams",store.listAll());
     }
 
 
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("edit/{id}")
+    public TemplateInstance edit(@PathParam("id") Long id) {
+
+        log.info("edit request for {}",id);
+        Team team=store.findById(id);
+        if(team==null) {
+            log.error("resource {} not found",id);
+            return null;
+        }
+        TeamForm f= TeamForm.newForm(team);
+
+        return t.new_team.data("f",f,"e",new HashMap<>());
+
+    }
 
 
 
@@ -57,15 +81,24 @@ public class TeamUI {
     @Path("add")
     @Produces(MediaType.TEXT_HTML)
     @Transactional
-    public TemplateInstance add(@MultipartForm NewTeamForm f) {
+    public TemplateInstance add(@MultipartForm TeamForm f,@Context HttpHeaders headers) {
 
+        Long id=null;
 
-        log.info("new team add request [{}] [{}]",f.name,f.description);
+        if(headers.getRequestHeaders().containsKey("x-team-update")) {
+            try {
+                id = Long.parseLong(headers.getHeaderString("x-team-update"));
+            } catch(NumberFormatException nfe) {
+                ;
+            }
+        }
+
+        log.info("new team add request [{}] [{}] //{}",f.name,f.description,id);
 
         Map<String, String> errors = f.isValid();
         if (errors.isEmpty()) {
 
-            MyTeam mt = f.newTeam();
+            Team mt = f.newTeam(store,id);
             store.persist(mt);
             return t.team_added.data("t", mt);
         } else {
