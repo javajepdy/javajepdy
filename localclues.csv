@@ -154,7 +154,6 @@ Gone but not forgotten,200,Named after the Norse gods hall of the slain,What is 
 Gone but not forgotten,300,The opposite of Hot Coffee?,What is IcedTea,anon
 Gone but not forgotten,300,Unlike it 's prehistoric and decorative namesake this OpenJDK project is very much alive.,What is Project Amber,anon
 Gone but not forgotten,300,Probably not named after head gear this project aims to help Java developer go native,What is project panama,anon
-OpenJDK,400,"Named after a famous Roger, this project explored interoperability between Jigsaw and OSGi",What is Penrose,anon
 Gone but not forgotten,400,This Itallian sounding project gave us standardised Java version numbers,What is project Verona,anon
 Gone but not forgotten,400,The clue's in the name - downsizing Java object headers ,What is Lilliput,anon
 *,Here there be Snarks,simple true/false clues for real or fake classes,,
@@ -191,25 +190,6 @@ Billy Korando's mensa challenge,400," When using text blocks, adding this charac
 Billy Korando's mensa challenge,400,"When using pattern matching for instance of, what scope is the pattern variable assigned to when the predicate is true? ",Flow scope,BK
 Billy Korando's mensa challenge,400,"Per the Java language specification var is not a keyword, but is instead...",A reserved type name,BK
 Billy Korando's mensa challenge,400,"The jdk classes, Long, Optional, and Year, are examples of what concept introduce in Java 8?", value based class,BK
-*,Devnexus day 1,Talks at Devnexus today!,,
-Devnexus day 1,100,Not just a rare fossil,What is Project Amber,anon
-Devnexus day 1,100,Venkat's guide to weaving explained all,What is Project loom,anon
-Devnexus day 1,100,Raymond Camden's talk combined peanut butter with this,What is Jamstack,anon
-Devnexus day 1,100,Reza Rahman showed just how much Microsoft cared about this,What is Java,anon
-Devnexus day 1,100,"José Paumard talk covered Records, Sealed Classes and Pattern Matching - all new in this release",What is Java 17,anon
-Devnexus day 1,100,Lennon and Najae's talk gave us a 101 on this core developer skill that doesn't actually involve entomology,What is debugging,anon
-Devnexus day 1,100,Cedric Clyburn postulated that containers could be 'done' without this roustabout,What is Docker,anon
-Devnexus day 1,100,Larry Maccherone explained how to insert SEC into this popular agile descendant ,What is DevOps,anon
-Devnexus day 1,300,Rodrigo introduced us to what sounds like a group of slinkies,What is Spring Batch,anon
-Devnexus day 1,300,Hugo Guerrero talk offered to liberate our data using this technology,What is Apache Kafka,anon
-Devnexus day 1,300,This newly named group produces temurin,What is Adoptium?,anon
-Devnexus day 1,300,Ben measured the Impact of this,What is Software Craft,anon
-Devnexus day 1,300,The empire state building was not hurt in Vik Gamov's talk about this large creature,What is Kong,anon
-Devnexus day 1,300,Simon Browns V2 talk gave us an artists impression for programmers,What is Diagrams as code,anon
-Devnexus day 1,300,Could Nathaniel and Whitney's memorably named talk take on Vik Gamov's Kong ,What is Codezilla,anon
-Devnexus day 1,400,Meme Wrangler extraordinaire,Who is Neil Ford,anon
-Devnexus day 1,400,Olena's gave us an uncomplicated guide to this apache project,What is Apache Kafka,anon
-Devnexus day 1,400,Can we believe Sendi's guide to nothing?,What is Zero Trust,anon
 *,Java Platform,"JVM, Language, API",,
 Java Platform,100,This is the only method of java.lang.Object ever to have been deprecated.,What is finalize()?,Stuart Marks
 Java Platform,100,"It's like an Iterator, but it can be split.",What is a Spliterator?,Stuart Marks
@@ -244,6 +224,7 @@ Name that Release,400,The first release that allowed 0b00100001 as a value,What 
 OpenJDK,100,This is the name of the project that introduced the module system.,What is Jigsaw?,Stuart Marks
 OpenJDK,200,This project introduced some small change into Java.,What is Project Coin?,Stuart Marks
 OpenJDK,400,The OpenJDK project to change the JDK version-string scheme was named after this Italian City.,What is Verona? (or Project Verona),Stuart Marks
+OpenJDK,400,"Named after a famous Roger, this project explored interoperability between Jigsaw and OSGi",What is Penrose,anon
 ,,,,
 People,100,"He's the author of a popular book ""Concurrent Programming in Java"" and he developed the java.util.concurrent package.",Who is Doug Lea?,Stuart Marks
 People,100,"A veteran of programming language books on Lisp and C, he was one of the first editors of the Java Language Specification",Who is Guy Steele?,Stuart Marks
