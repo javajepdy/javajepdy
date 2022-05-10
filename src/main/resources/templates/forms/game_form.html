@@ -11,8 +11,12 @@
             <option selected value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Fix</option>
+            <option value="6">Six</option>
         </select>
         <label for="rounds">Rounds</label>
+        {#if e.containsKey("rounds") } <span style="color:red;">{e.get("rounds")}</span> {/if}
     </div>
     <div class="form-floating mb-3">
         <select type="text" name="categories" class="form-select" id="categories" placeholder="Categories per round">
@@ -23,7 +27,7 @@
         <label for="categories">Categories per Round</label>
     </div>
 
-    {#for i in 4}
+    {#for i in 6}
     <div class="form-floating mb-3">
 
         <select type="text" name="team{i}"  class="form-select" id="team{i}"  placeholder="Name of Team {i}">
@@ -36,7 +40,7 @@
     </div>
     {/for}
     <div>
-        {#if e.containsKey("general") } {e.get("general")} {/if}
+        {#if e.containsKey("general") } <span style="color:red;">{e.get("general")}</span> {/if}
     </div>
     <div class="checkbox mb-3">
     </div>

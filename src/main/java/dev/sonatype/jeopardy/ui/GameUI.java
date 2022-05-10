@@ -74,7 +74,7 @@ public class GameUI {
         log.infof("view %s requested",id);
         Game g=store.getPublicEvent(id);
         if(g==null) return nogame.data(null);
-        return t.view.data("id",id,"game",g);
+        return t.view.data("id",id,"game",g,"c",clues);
     }
 
     @GET
@@ -84,7 +84,7 @@ public class GameUI {
         log.infof("viewstate %s requested",id);
         Game g=store.getPublicEvent(id);
         if(g==null) return nogame.data(null);
-        return viewstate.data("game",g);
+        return viewstate.data("game",g,"c",clues);
     }
 
 

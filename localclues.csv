@@ -1,0 +1,279 @@
+Category,Difficulty,Clue,Answer,Attribution
+*,Badges & lanyards,Anything regarding Java conferences,,
+Badges & lanyards,100,A style of conference presentation where the like minded flock together,what is BOF (birds of a feather),anon
+Badges & lanyards,100,This west coast conference was the place to be until 2017 ,What is JavaOne,anon
+Badges & lanyards,200,"A group of ‘technology leaders’ sponsored by Oracle, who recently held their own online conference to an audience of 14 million in January of 2022.",Who are the Java Champions,anon
+Badges & lanyards,200,A 3 day conference usually held in May in London,What is Devoxx UK,anon
+Badges & lanyards,300,A sucessful community program related to Devoxx,What is Voxxed Days,anon
+*,Deprecated,Rarely used features,,
+Deprecated,200," This class was deprecated in Java 11, it extends Panel and is designed to make a small program meant to run inside another application. It is designed to be the superclass of any such program embedded in a web page. ",What is java.applet.Applet?,anon
+Deprecated,300,It was green in the beginning and now comes back in a different form.,Greenthreads,anon
+Deprecated,300,Java original contribution to animate the web,What are Applets,anon
+Deprecated,300,Using this class is contentious and often unwise,What is sun.misc.UnSafe,anon
+Deprecated,300,"A feature of Java 8 you’ve probably not heard of, this method ensures you get the strongest random number generator available to the JVM.",What is SecureRandom.getinstanceStrong(),anon
+Deprecated,400,An exception depecrated as of Java 11 that would be thrown when a requested operation could not be completed because a specified line number was wrong,What is com.sun.jdi.InvalidLineNumberException? ,anon
+Deprecated,400,"A feature of Java 8 you’ve probably never heard of, this method converts a Date object from previously used API’s to an Instant. ",What is Date.toInstant()? ,anon
+Deprecated,400,The Part of the JavaFX Graphics system used to render jobs. It is responsible for rasterization and rendering of JavaFX scenes,What is Prism?,anon
+*,Devil is in the details,"low level features like native methods, compiler stuff etc.",,
+Devil is in the details,100,A technique for calling at a distance,What is RMI,anon
+Devil is in the details,100,This tool observes and presents the actions of the Hotspot compiler,What is JitWatch,anon
+Devil is in the details,200,A java method whose implementation is also written in another programming language such as C/C++,What is a Java Native Method? ,anon
+Devil is in the details,300,"+/- 9,223,372,036,854,775,808 ",What is 64 bit,anon
+Devil is in the details,300,This feature has been known to resurrect dead java objects,What is Finalisation,anon
+Devil is in the details,300,"This capricious, elusive and erratic modifier offers a lite form of synchronization",What is volatile,anon
+Devil is in the details,300,This cheeky hex value adorns all class files,What is CAFEBABE,anon
+Devil is in the details,300,The only official subinterface of Serializable,What is Externalizable ,anon
+Devil is in the details,300,A generic complaint or an English pop band from 1985,What is Erasure,anon
+Devil is in the details,300,Did James Stewart's classic civil war film of 1965 inspire this garbage collector,What is Shenandoah,anon
+Devil is in the details,300,This compiler which comes as a component of the Java Runtime environment helps improve the performance of Java applications at run time , What is Just in Time?,anon
+Devil is in the details,400,Any character whose codepoint is less than or equal to ‘U+0020’ ,What is space,anon
+Devil is in the details,400,This standard Javac option generated all debugging information ,What is -g?,anon
+Devil is in the details,400,The interface that allows java code running in the JVM to be called and called by Native applications ,What is JNI? ,anon
+*,Java through the ages,"History of Java, people, places and techologies",,
+Java through the ages,100,"Released on January 23, 1996, this technology has changed the world",what is Java,anon
+Java through the ages,100,Superceeded by Adoptium this project gained much support from the community,What is AdoptOpenJDK,anon
+Java through the ages,100,Canadian computing scientist best known as the lead designer behind Java ?,Who is James Gosling ?,anon
+Java through the ages,200,"A discontinued language that would later evolve into Java, named for a tree which stood outside the lead developers office? ",What is Oak?,anon
+Java through the ages,300,This name was considered for the language before Sun ultimately settled on 'Java'. ,What is 'Oak'? (or What is 'Green'?),anon
+Java through the ages,300,The code name for Java 5,What is Tiger,anon
+Java through the ages,300,This historic project was designed to allow building of OpenJDK without proprietary software,What is IcedTea,anon
+Java through the ages,300,"In a world without StackOverflow, this was ""a friendly place for Java greenhorns"" and THE place to get your Java questions answered. ",What is Java Ranch? / What is javaranch.com?,anon
+Java through the ages,300,An ancronim for the original promise of Java,"What is WORA (Write once, run anywhere)",anon
+Java through the ages,300,The most common static final field name,What is serialVersionUID.  ,anon
+Java through the ages,400,The precursor to JNI,What is NMI,anon
+Java through the ages,400,the name for the Java codebase prior to Hotspot,What is classic,anon
+Name that Release,400,Java Naming and Directory Interface (JNDI) API,What is 1.3.0,anon
+Java through the ages,400,Probably the first Java jewellery ,What is Java Ring,anon
+Java through the ages,400,The year when JDK 1.0 was released,What is 1996 ,anon
+*,JEP'dy!,Java Enhancement Proposals and other future features,,
+JEP'dy!,100,A language used to add formatting to plain text and the language whish should be used to submit JEP documents, What is Markdown,anon
+JEP'dy!,200,"JEP 409 now a finalized feature of Jdk 17, the feature allows classes to restrict what other classes and interfaces can extend them",What are sealed classes?,anon
+JEP'dy!,300,This concurrency innovation may render thread pools obsolete,Virtual threads (Project Loom),anon
+JEP'dy!,300,"The index of all JDK Enhancement Proposals,",What is JEP 0,anon
+JEP'dy!,300,In Java 15 we said goodbye to this German rhinoceros,What is Nashorn,anon
+JEP'dy!,300,This new feature in Java 15 made String expressions just  a little  tidier,What are Text Blocks,anon
+JEP'dy!,300,"This project which will introduce lightweight, efficient threads managed by the Java Virtual.",Project Loom,anon
+JEP'dy!,300,The openjdk project name for JSR 376 gave everyone a bit of a puzzle,What is Project  Jigsaw,anon
+JEP'dy!,400,Expected to be announced in 2063,What is Java 100,anon
+JEP'dy!,400,Introduced  by JEP 371 and intended for use by frameworks that generate classes at run time and use them indirectly,What are hidden classes,anon
+JEP'dy!,400,A JEP draft which proposes an effert to unify the treatment of reference to primitive types ingeneric code,What is universal Generics? ,anon
+JEP'dy!,400,JEP 408 - provides a command line tool to start a minimal web server that serves static files only,What is Simple Web Server ,anon
+*,Made for the spotlight,"conference speakers, Java Champions, community organisers",,
+Made for the spotlight,100,This Spring guru is certainly not over extended,Who is Josh Long,anon
+Made for the spotlight,100,Java's very own cartoon character,Who is Duke,anon
+Made for the spotlight,300,IBMs very own MicroProfile dynamo,Who is Emily Jiang,anon
+Made for the spotlight,300,This IBM speaker is known for their natural analogies,Who is Grace Jansen,anon
+Made for the spotlight,300,not quite rocket powered champion of the IDE ,Who is Trish Gee,anon
+Made for the spotlight,300,"A prolific conference speaker, who currently works for Revolut and is a member of the Polish Software Engineering professionals Association and was previously a Staff engineer at Ebay.",Who is Andrzej Grzesik?,anon
+Made for the spotlight,400,"Java Champion, Past member of the Netbeans dream team and contributing author The Definitive Guide to Modern Java Clients with JavaFX",Who is Gail Anderson?,anon
+Made for the spotlight,400,Author of Programming the mobile Web and High Performance Mobile Web.,Who is Maximiliano Firtman?,anon
+*,Modern languages,Alternate JVM languages,,
+Modern languages,,A popular lisp programming language used on the java platform which while having its initial release in 2007 had its first stable release in 2009 and its most recent release (1.10.3) on March 4 2021 ,What is Clojure?,anon
+Modern languages,,"A statically typed general purpose programming language which when created in 2004 was designed to address the criticisms of java. It can use Javas libraries, is object orientated and uses the curly-brace syntax.",What is Scala?,anon
+Modern languages,,A general purpose language which runs in the JRE created by Brian and Andy Frank in 2005 it aims to blend together static and dynamic typing ,What is Fantom? ,anon
+Modern languages,,"A dynamic programming language that allows static checking, and includes the save navigation operator (preventing a Null pointier exception from occurring.) It is licenced by Apache ",What is Groovy?,anon
+*,Not invented here,Java frameworks & libraries,,
+Not invented here,100,This ‘swiss army library’ is made up of 43 modular libraries and extends many core Java libraries ? ,What is apache commons,anon
+Not invented here,100,A separate library used specifically for processing and dealing with XML,What is JAXB?,anon
+Not invented here,100,The tagline for Quarkus?,"What is Supersonic, Subatomic, Java",anon
+Not invented here,200, A library which helps implement Reactive Extensions using observables ,What is RXJava?,anon
+Not invented here,300,A winner of a Duke's Choice Award in 2008 this technology has been replaced by its more debonair  younger brother,What is Hudson,anon
+Not invented here,300,This database engine sounds like an HTML tag,What is H2,anon
+Not invented here,300,This database has an Elephant for an icon,What is PostgreSQL,anon
+Not invented here,300,The most widely used mocking library in Java ,What is Mockito? ,anon
+Not invented here,400,"Invented in 1951 and added to Java in 2002, it adds organised reconnaissance",What are Regular Expressions,anon
+Not invented here,400,It was internally called Protean,What is Quarkus,anon
+*,"Oh, the places we've been",geographical locations that have been important in Java's history,,
+"Oh, the places we've been",200,"The city where offices where Javasoft moved to after joining Sun Microsystems in April 1996, Offices which sat across the street from Apple’s R&D complex at the time",What is Cupertino California? ,anon
+"Oh, the places we've been",200,"The place where java Coffee, for which this programming language is named, comes from? ",What is Indonesia?,anon
+"Oh, the places we've been",300,"This city, the largest in North California, was the birth place of Java",What is San Jose,anon
+"Oh, the places we've been",300, The place where Founder of java was born,"What is Calgary, Canada",anon
+"Oh, the places we've been",400,The place on Mars where the spirit rover (which NASA used java to Control) landed ,What is the Gusev Crater,anon
+*,Java Builders,People who had a large influence on the language,,
+Java Builders,100,"Just like the Matrix, Java has a Chief Architect",Who is Mark Reinhold,anon
+Java Builders,100,The cheery named cofounder of Sun Microsystems who invented a version of UNIX that used TCP/IP ,Who Is Bill Joy?,anon
+Java Builders,200,"He's the author of a popular book ""Concurrent Programming in Java"" and he developed the java.util.concurrent package.",Who is Doug Lea?,Stuart Marks
+Java Builders,300,Their alter ego is Dr Deprecator,Who is Stuart Marks,anon
+Java Builders,300,The current Java Language Architect is well know for deep presentations on the Java language,Who is Brian Goetz,anon
+Java Builders,300,"The creator of the Extreme Programming and Test Driven Development software development methodologies, also the cocreator of the Junit testing framework",Who is Kent Beck? ,anon
+Java Builders,300,"The founder of Spring Framework, and wrote the best selling Expert One-on-One J2EE Design and Development",Who is Rod Johnosn? ,anon
+Java Builders,300,"A veteran of programming language books on Lisp and C, he was one of the first editors of the Java Language Specification",Who is Guy Steele?,Stuart Marks
+People,400,Famous for their haiku resignation tweet from Sun,Who is Jonathan Schwartz,anon
+Java Builders,400,This Sun engineer was lead for Project Coin,Who is Joe Darcy,anon
+Java Builders,400,"Someone who has worked for Sun, and Oracle and has helped develop *Lisp, C* and Java ",Who is Guy Lewis Steele Jr.,anon
+*,Semicolon expected,"Java syntax, keywords, reserved words etc",,
+Semicolon expected,100,the automatic conversion between primitive types and objects,What is Autoboxing,anon
+Semicolon expected,100,The instruction set for the JVM,What is bytecode,anon
+Semicolon expected,100,Implementing this interface without care  can make your class  vulnerable,What is Serialisation ,anon
+Semicolon expected,100,The entry point for Java applications,What is main,anon
+Here there be Snarks,100,null is a class,What is False,anon
+Semicolon expected,100,This tool does not actually heal you java code,what is javadoc,anon
+Semicolon expected,100, A keyword introduced in Java 10 ,What is Var?,anon
+Semicolon expected,200,The keyword used to indicate that an attribute is not cached thread-locally,What is Volatile?,anon
+Semicolon expected,200,"This feature allows different methods to have same name, but different signatures ",What is Overloading? ,anon
+Semicolon expected,300,The first four bytes of the Java class file format in hexadecimal format.,What is CAFEBABE?,anon
+Semicolon expected,300,This primative can hold values to 6 decimal places,What is float,anon
+Semicolon expected,300,The Runtime Error you’d receive if you removed the static modifier from the main method in Java ,What is NoSuchMethodError? ,anon
+Here there be Snarks,400,UTF8's longest single byte sequence  is 6 bytes,What is true,anon
+*,The big picture,"high level features like lambdas, streams, serialisation, polymorphism etc.",,
+The big picture,100,"An interactive tool to evaluate declarations, statements and expressions",JShell,anon
+The big picture,100,A language construct that implements a method defined by a functional interface,Lambda expressions,anon
+The big picture,100,It looks like a primitive data type but is actually a class.,arrays,anon
+The big picture,100,In other situations this command line tool might be orange,what id JFR (Java Flight Recorder),anon
+The big picture,100,This multi-language build system is the default build tool in Android Studio.,What is Gradle?,anon
+The big picture,100,The java concept which allows you to extend the base functionality of a superclass?,What is polymorphism?,anon
+The big picture,200,Nameless short blocks of code which take parameters and return a value,What is lambdas?,anon
+The big picture,200,The mechanism which allows a byte stream to be turned into an object,What is deserialization? ,anon
+The big picture,300,this command line tool helps find bugs,what is jdb,anon
+The big picture,300,This kind of build system optimizes builds into individual phases which can be skipped if their outputs are up-to-date from a previous build.,What is an incremental build system.,anon
+The big picture,300,This feature in Java 8 this is an API used to process collections of objects. It supports various methods that can be pipelined to produce the desired result,What is the stream API? ,anon
+*,Cryptic Keywords,cryptic clues that match Java language reserved words,,
+Cryptic Keywords,100,nonconcrete,abstract,anon
+Cryptic Keywords,100,profess,assert,anon
+Cryptic Keywords,100,true or false,boolean,anon
+Cryptic Keywords,100,snap,break,anon
+Cryptic Keywords,100,8 bit,byte,anon
+Cryptic Keywords,100,a group of students,class,anon
+Cryptic Keywords,100,advance,continue,anon
+Cryptic Keywords,100,instead,else,anon
+Cryptic Keywords,100,"to name things separately, one by one",enum,anon
+Cryptic Keywords,300,small luggage,case,anon
+Cryptic Keywords,300,a childs game,catch,anon
+Cryptic Keywords,300,British slang for tea,char,anon
+Cryptic Keywords,300,nonpayment,default,anon
+Cryptic Keywords,300,there is no try,do,anon
+Cryptic Keywords,300,dead ringer,double,anon
+Cryptic Keywords,300,This keyword forces a  no nonsense approach to  calculations,what is strictfp,anon
+Cryptic Keywords,400,not changing or varying,const,anon
+*,Gone but not forgotten,Java projects from history,,
+Gone but not forgotten,100,Pocket change anyone?,What is Project Coin,anon
+Gone but not forgotten,100,Motor City inspired OpenJDK project ,What is Detroit,anon
+Gone but not forgotten,100,Type of puzzle,What is Jigsaw,anon
+Gone but not forgotten,100,In physics this project would be a sub atomic particle,What is Lambda,anon
+Gone but not forgotten,200,Named after the Norse gods hall of the slain,What is Valhalla,anon
+Gone but not forgotten,300,The opposite of Hot Coffee?,What is IcedTea,anon
+Gone but not forgotten,300,Unlike it 's prehistoric and decorative namesake this OpenJDK project is very much alive.,What is Project Amber,anon
+Gone but not forgotten,300,Probably not named after head gear this project aims to help Java developer go native,What is project panama,anon
+OpenJDK,400,"Named after a famous Roger, this project explored interoperability between Jigsaw and OSGi",What is Penrose,anon
+Gone but not forgotten,400,This Itallian sounding project gave us standardised Java version numbers,What is project Verona,anon
+Gone but not forgotten,400,The clue's in the name - downsizing Java object headers ,What is Lilliput,anon
+*,Here there be Snarks,simple true/false clues for real or fake classes,,
+Here there be Snarks,100, java.lang.ref.PhantomReference,What is true,anon
+Here there be Snarks,100,java.lang.System.Logger,what is true,anon
+Here there be Snarks,100,java.util.WeakHashedMap,What is false  - thinking of WeakHashMap perhaps?,anon
+Here there be Snarks,300,java.util.concurrent.locks.AbstractOwnableSynchronizer,What is true,anon
+Here there be Snarks,400,java.io.NullPointerException,What is false (not thinking of java.lang.NullPointerException?),anon
+*,Logic Bombs,simple true/false clues,,
+Logic Bombs,100,Double.NEGATIVE_INFINITY < Double.MIN_VALUE,TRUE,anon
+Logic Bombs,100,-1 % 2 == 1,FALSE,anon
+Logic Bombs,100,(byte)(double)(int)(char)(byte)-1 == -1,TRUE,anon
+Logic Bombs,100,true  ? false : true,what is false,anon
+Logic Bombs,100,!true  ? !false : true,What is true,anon
+Logic Bombs,100,a < a++,What is false ,anon
+Logic Bombs,300,java.time.Year.MAX_VALUE == 9999,What is false.   (Year.MAX_VALUE= 999999999),anon
+Logic Bombs,300,(--a - a++) == 0,What is true,anon
+Logic Bombs,400, java.rmi.registry.Registry.REGISTRY_PORT ==  1099,What is true,anon
+*,Billly's SipOfJava!,,,
+Billly's SipOfJava!,100,What characters do you use to delimit a text block?,triple double quotes,BK
+Billly's SipOfJava!,100,This feature was the first to implement pattern matching in Java,instanceof,BK
+Billly's SipOfJava!,100,This new feature added in Java 16 allows a data carrier class to be declared in a single line,Record,BK
+Billly's SipOfJava!,100, This JDK tool for recording the behavior of a JVM is inspired from an avionics recording device,JDK Flight Recorder (JFR),BK
+Billly's SipOfJava!,200,The date and time API introduced in JDK 8 was designed in part to replace which popular third party date and time library?,Joda time,BK
+Billly's SipOfJava!,200,"Added in JDK 10, this feature can improves startup times by creating a pre-processed archive of application class data. ",App CDS,BK
+Billly's SipOfJava!,200,This JDK tool could be used to scan Java source classes and jars for deprecated APIs,jdeprscan,BK
+Billly's SipOfJava!,300,This restricted identifier can be used to return a value out of a switch expression,yield,BK
+Billly's SipOfJava!,300,"Added in JDK 16, this feature can allow for fast communication between two JVM processes on the same host", unix-domain sockets,BK
+Billly's SipOfJava!,300,JEP 330 added the ability for the java command to launch a single-file source-code application. What version of the JDK was this JEP introduced in?,JDK 11,BK
+*,Billy Korando's mensa challenge,,,
+Billy Korando's mensa challenge,400,This is the first hyphentanted keyword to be added to Java,non-sealed,BK
+Billy Korando's mensa challenge,400,"When using Optional, it is highly recommended to avoid this method for retrieving value contained within the Optional",What is Get,BK
+Billy Korando's mensa challenge,400," When using text blocks, adding this character to the end of the line will suppresses the insertion of a new line", backslash,BK
+Billy Korando's mensa challenge,400,"When using pattern matching for instance of, what scope is the pattern variable assigned to when the predicate is true? ",Flow scope,BK
+Billy Korando's mensa challenge,400,"Per the Java language specification var is not a keyword, but is instead...",A reserved type name,BK
+Billy Korando's mensa challenge,400,"The jdk classes, Long, Optional, and Year, are examples of what concept introduce in Java 8?", value based class,BK
+*,Devnexus day 1,Talks at Devnexus today!,,
+Devnexus day 1,100,Not just a rare fossil,What is Project Amber,anon
+Devnexus day 1,100,Venkat's guide to weaving explained all,What is Project loom,anon
+Devnexus day 1,100,Raymond Camden's talk combined peanut butter with this,What is Jamstack,anon
+Devnexus day 1,100,Reza Rahman showed just how much Microsoft cared about this,What is Java,anon
+Devnexus day 1,100,"José Paumard talk covered Records, Sealed Classes and Pattern Matching - all new in this release",What is Java 17,anon
+Devnexus day 1,100,Lennon and Najae's talk gave us a 101 on this core developer skill that doesn't actually involve entomology,What is debugging,anon
+Devnexus day 1,100,Cedric Clyburn postulated that containers could be 'done' without this roustabout,What is Docker,anon
+Devnexus day 1,100,Larry Maccherone explained how to insert SEC into this popular agile descendant ,What is DevOps,anon
+Devnexus day 1,300,Rodrigo introduced us to what sounds like a group of slinkies,What is Spring Batch,anon
+Devnexus day 1,300,Hugo Guerrero talk offered to liberate our data using this technology,What is Apache Kafka,anon
+Devnexus day 1,300,This newly named group produces temurin,What is Adoptium?,anon
+Devnexus day 1,300,Ben measured the Impact of this,What is Software Craft,anon
+Devnexus day 1,300,The empire state building was not hurt in Vik Gamov's talk about this large creature,What is Kong,anon
+Devnexus day 1,300,Simon Browns V2 talk gave us an artists impression for programmers,What is Diagrams as code,anon
+Devnexus day 1,300,Could Nathaniel and Whitney's memorably named talk take on Vik Gamov's Kong ,What is Codezilla,anon
+Devnexus day 1,400,Meme Wrangler extraordinaire,Who is Neil Ford,anon
+Devnexus day 1,400,Olena's gave us an uncomplicated guide to this apache project,What is Apache Kafka,anon
+Devnexus day 1,400,Can we believe Sendi's guide to nothing?,What is Zero Trust,anon
+*,Java Platform,"JVM, Language, API",,
+Java Platform,100,This is the only method of java.lang.Object ever to have been deprecated.,What is finalize()?,Stuart Marks
+Java Platform,100,"It's like an Iterator, but it can be split.",What is a Spliterator?,Stuart Marks
+Java Platform,100,This enormously popular language feature was named after a letter of the Greek alphabet.,What is Lambda?,Stuart Marks
+Java Platform,100,This infamous networking class performs a DNS lookup when you call equals() on it.,What is URL? (or java.net.URL),Stuart Marks
+Java Platform,200,This collection class is a List that makes a complete copy of itself whenever it is modified.,What is CopyOnWriteArrayList?,Stuart Marks
+Java Platform,200,This kind of thread doesn't keep the JVM alive even if it is still running.,What is a daemon thread?,Stuart Marks
+Java Platform,200,"The full name for this feature is Local Variable Type Inference, but everybody refers to it by this keyword (which is actually a ""reserved type name"").",What is var?,Stuart Marks
+Java Platform,300,These methods are inherently dangerous and were among the first methods of the Thread class to be deprecated in JDK 1.2.,"What are Thread.stop(), suspend(), and resume()? [destroy() is also acceptable, though it wasn't actually deprecated until later]",Stuart Marks
+Java Platform,300,This is the name for a kind of interface that has no fields or methods.,What is a marker interface?,Stuart Marks
+*,Dr Depreciators brainaches,,,
+Dr Depreciators brainaches,300,This is the only bytecode added to the Java Virtual Machine specification after version 1.0.,What is invokedynamic?,Stuart Marks
+Dr Depreciators brainaches,300,These are the five bytecodes that invoke something.,"What are invokedynamic, invokestatic, invokevirtual, invokeinterface, and invokespecial.",Stuart Marks
+Dr Depreciators brainaches,400,This Collection sub-interface keeps its elements in an ordering induced by a comparison method.,What is NavigableSet? (SortedSet is also acceptable),Stuart Marks
+Dr Depreciators brainaches,400,This is the exact exception type that is thrown when you call charAt(-1) on any string.,What is StringIndexOutOfBoundsException (be strict! IndexOutOfBoundsException and ArrayIndexOutOfBoundsException aren't acceptable),Stuart Marks
+Dr Depreciators brainaches,400,"They are two classes that can be caught or thrown whose names do not end in ""Exception"" or ""Error"".",What are Throwable and ThreadDeath?,Stuart Marks
+Dr Depreciators brainaches,400,These are three examples of garbage collectors in OpenJDK.,"What are [any three of] Serial, Parallel, CMS, G1, ZGC, Shenandoah, Epsilon. [change the number to adjust the difficulty; I'd still accept CMS even though it's been removed, as it's still present in JDK 8 and JDK 11]",Stuart Marks
+*,Name that Release,,,
+Name that Release,300,The long standing tool rmic was removed in this release,What is Java 15,anon
+Name that Release,300,This release said goodbye to Pack200 ,What is Java 14,anon
+Name that Release,300,Javadoc said goodbye to HTML4 support in this release,What is Java 13,anon
+Name that Release,300,FileInputStream lost its finalize method in this release,What is Java 12,anon
+Name that Release,300,Farewell Java plug-in this was the last release it was shipped,What is Java 10,anon
+Name that Release,300,java.corba failed to make this release,What is Java 11,anon
+Name that Release,300,jvisualvm was first shipped in this release,What is Java 6,anon
+Name that Release,300,@Annotations where introduced in this release,What is Java 5,anon
+Name that Release,400,This Java version changed the memory model.,What is Java 1.5,anon
+Name that Release,400,The Hotspot flag -XX:SafepointPollOffset was removed in this release,What is Java 9,anon
+Name that Release,400,The experimental tool jaotc was removed in this release,What is Java 16,anon
+Name that Release,400,The first release that allowed 0b00100001 as a value,What is Java 7,anon
+,OpenJDK,,,
+OpenJDK,100,This is the name of the project that introduced the module system.,What is Jigsaw?,Stuart Marks
+OpenJDK,200,This project introduced some small change into Java.,What is Project Coin?,Stuart Marks
+OpenJDK,400,The OpenJDK project to change the JDK version-string scheme was named after this Italian City.,What is Verona? (or Project Verona),Stuart Marks
+,,,,
+People,100,"He's the author of a popular book ""Concurrent Programming in Java"" and he developed the java.util.concurrent package.",Who is Doug Lea?,Stuart Marks
+People,100,"A veteran of programming language books on Lisp and C, he was one of the first editors of the Java Language Specification",Who is Guy Steele?,Stuart Marks
+People,400,"Widely regarded as the ""father of Java,"" James Gosling developed this windowing system before he started developing Java.",What is NeWS?,Stuart Marks
+*,Pot Luck,,,
+Pot Luck,100,"This file type is used to distribute a collection of various resources that together constitute a web application such as JAR- Fules, Java Sclasses, static web-pages, Java Servlets etc",What is a WAR file?,anon
+Pot Luck,100,a 2001 inspired term for a particular Java architecture,What is a Monolith,anon
+Pot Luck,100,The colloquial term for the most impactful Java vulnerability so far,What is Log4Shell,anon
+Pot Luck,100,"This long running book series was useful, concise and might appeal to squirrels","What is ""Java in a Nutshell""",anon
+Pot Luck,300,a matrix inspired term applied to modern infrastructure.  There is no spoon,what is serverless,anon
+Pot Luck,300,Something John Wayne and Java have in common,What is Duke,anon
+Pot Luck,400,The year JavaFx 8 was released as a part of Java,What is 2014,anon
+Pot Luck,400,public contributors to OpenJDK must sign this agreement,what is OCA,anon
+*,Map Airport to conference,,,
+Map Airport to conference,100,ATL,What is Devnexus,anon
+Map Airport to conference,100,SFO,What is SpringOne,anon
+Map Airport to conference,100,ARN,What is JFokus,anon
+Map Airport to conference,200,LHR,What is Devoxx UK,anon
+Map Airport to conference,200,LAS,What is JavaOne,anon
+Map Airport to conference,200,IST,What is Java Day Istanbul,anon
+Map Airport to conference,300,CDG,What is Devoxx France,anon
+Map Airport to conference,300,LIS,What is JNation,anon
+Map Airport to conference,300,KRK,What is Geecon  or Devoxx Poland,anon
+Map Airport to conference,400,BRU,What is Devoxx Belgium,anon
+Map Airport to conference,400,BCN,What is JBCN,anon
+Map Airport to conference,400,OSL,What is JavaZone,anon
+Map Airport to conference,400,YUL,What is KOTLIN CONF,anon
+*,Star Wars 4J,A Java starwars parody,,
+Star Wars 4J,300,"This framework bears a stiking simularity to the DeathStar in name, scale and reputation",What is WebSphere,
+Star Wars 4J,100,A bumbling Gungans first amd second names,What is Jar,
+Star Wars 4J,200,Do all stormtroopers implement this interface?,What is java.lang.Cloneable,
+Star Wars 4J,400,Even a small green Jedi has to take a break (maybe have a beer?),What is Joda Time,
+Star Wars 4J,400,Like Coruscant this place is at core of the Java community and open to everybody,What is OpenJDK,

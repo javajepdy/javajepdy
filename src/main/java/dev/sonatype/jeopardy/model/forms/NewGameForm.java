@@ -37,6 +37,12 @@ public class NewGameForm {
     @FormParam("team4")
     public String team4;
 
+    @FormParam("team5")
+    public String team5;
+
+    @FormParam("team6")
+    public String team6;
+
     public Set<Team> teams=new HashSet<>();
 
     public String toString() {
@@ -57,7 +63,7 @@ public class NewGameForm {
             }
         }
 
-        if(rounds<1 || rounds>3) errors.put("rounds","number of rounds must be between 1 and 3");
+        if(rounds<1 || rounds>6) errors.put("rounds","number of rounds must be between 1 and 6");
 
         Set<Long> teamIDs=collectTeams();
         if(teamIDs.isEmpty()) errors.put("general","no teams specified");
@@ -82,6 +88,8 @@ public class NewGameForm {
         addIfValid(names,team2);
         addIfValid(names,team3);
         addIfValid(names,team4);
+        addIfValid(names,team5);
+        addIfValid(names,team6);
 
         return names;
     }

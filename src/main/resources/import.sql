@@ -1,3 +1,4 @@
-INSERT INTO team (id, name, description) VALUES (200, 'Azul','Lord of Rain?');
-INSERT INTO team (id, name, description) VALUES (201, 'IBM','Providing computers to royalty since 1704');
-INSERT INTO team (id, name, description) VALUES (202, 'The Audience','java developers who actually do the work');
+INSERT INTO team (id, name, description) VALUES (200, 'BS','');
+INSERT INTO team (id, name, description) VALUES (201, 'GURU','');
+INSERT INTO team (id, name, description) VALUES (202, 'CR','');
+INSERT INTO team (id, name, description) VALUES (203, 'Rocket','');

@@ -6,19 +6,21 @@
         <h1 class="display-5 fw-bold">{game.name}</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">Almost ready. Catagories coming up include...</p>
-            <marquee behavior="scroll" direction="left">
-                <div class="display-5">
+            <marquee direction="up">
+                <table>
+                    <tbody>
                     {#for catsum in game.categorySummary()}
-                    "{catsum}",
+                    <tr><td class="display-6">{catsum}</td><td>{c.getDescription(catsum)}</td></tr>
                     {/for}
-                </div>
+                    </tbody>
+                </table>
             </marquee>
+
 
         </div>
     </div>
 
 {#case started}
-<h3>In Play : Round {game.currentRound}</h3>
 
 <div class="container-fluid">
     {#for row in game.rounds.get(game.currentRound).rows}
@@ -32,10 +34,12 @@
             {/if}
         {/for}
     </div>
+    <hr>
     {/for}
 </div>
 <hr>
-
+{#include includes/team_scores}{/include}
+<div>In Play : Round {game.currentRound}</div>
 {#case showClue}
 {#include includes/show_clue}{/include}
 
@@ -48,9 +52,9 @@
     <h1>The winner is {game.leader()}</h1>
     <h2>{game.leaderPoints()}</h2>
 
-{/switch}
     <hr>
     {#include includes/team_scores}{/include}
+{/switch}
 
-    <h4>{game.name}</h4>
+
 </div>

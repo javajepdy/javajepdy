@@ -9,10 +9,7 @@ import org.jboss.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Singleton;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.util.*;
 
 @Singleton
@@ -23,6 +20,7 @@ public class ClueStore implements PanacheMongoRepository<Category> {
     public ClueStore() throws IOException {
 
         log.warn("----> clue store created");
+
 
         if(count()==0) {
             insertTestData();
@@ -38,8 +36,26 @@ public class ClueStore implements PanacheMongoRepository<Category> {
 
     }
 
+    public String getDescription(String cat) {
+        Category c=getCategoryByTitle(cat);
+        if(c==null) return "?"+cat;
+        return c.description;
+    }
+
     private void insertTestData() throws IOException {
-        InputStream is=getClass().getResourceAsStream("/clues.csv");
+
+        InputStream is=null;
+
+        File f=new File("localclues.csv");
+
+        if(f.exists()) {
+            log.info("using local file csv");
+            is=new FileInputStream(f);
+        } else {
+            log.warn("using embedded  test file csv");
+           is=getClass().getResourceAsStream("/clues.csv");
+        }
+
         if(is==null) throw new RuntimeException("no clue file");
         Reader in = new InputStreamReader(is);
 
@@ -47,15 +63,16 @@ public class ClueStore implements PanacheMongoRepository<Category> {
         int r=0;
         for (CSVRecord record : records) {
             r++;
-            String category = record.get("Category");
-            String value = record.get("Value");
-            String clue = record.get("Clue");
-            String answer = record.get("Answer");
+            String category ="";
+            String value ="100";
+            String clue = "";
+            String answer = "";
 
-            if(clue==null) clue="";
-            if(category==null) category="";
-            if(answer==null) answer="";
-            if(value==null) value="100";
+            if(record.isSet("Category")) category=record.get("Category");
+            if(record.isSet("Value")) value = record.get("Value");
+            if(record.isSet("Clue"))  clue = record.get("Clue");
+            if(record.isSet("Answer"))  answer = record.get("Answer");
+
 
             value=value.replace(",","");
             value=value.replace("'","");
