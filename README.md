@@ -1,1 +1,1 @@
-# Java JEP'dy 
+# Obsolete -- go here
